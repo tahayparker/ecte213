@@ -12,4 +12,8 @@ A = [
 
 B = [150; 100; 130; 50; 0; 30; 60; 10; 40];
 
-x = inv(A) * B
+x = inv(A) * B;
+
+for i = 1:9
+    fprintf('V%d = %f\n', i, x(i));
+end
