@@ -24,6 +24,7 @@ V_total = V0 + V1;                   % Superposition principle: total potential
 
 % Compute electric field components using the negative gradient of V_total
 [Ex, Ey, Ez] = gradient(-V_total, 0.5, 0.6, 0.6);
+[Ex0, Ey0, Ez0] = gradient(-V0, 0.5, 0.6, 0.6);
 
 % Find the index where x = 0
 lengthg = length(gx);
@@ -38,3 +39,14 @@ xlim([-3,3]); ylim([-3,3]); zlim([-3,3]);
 xlabel('x'); ylabel('y'); zlabel('z');
 title('Electric Field and Potential (y-z plane slice at x=0)');
 grid on;
+
+% === 2D Visualization: Potential Slices and Electric Field ===
+figure(2)
+quiver(y, z, Ey0, Ez0, 1.5, 'b', 'linewidth', 1.5);
+hold on
+plot(y0, z0, 'r.', 'MarkerSize', 20);
+xlabel('Y'); 
+ylabel('Z');
+title('Electric Field of Q in YZ Plane');
+grid on;
+axis([-3 3 -3 3]);
