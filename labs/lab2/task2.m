@@ -38,6 +38,11 @@ function pdemodel
     pdetool('refine')
     pdetool('refine')
     pdetool('refine')
+    pdetool('refine')
+    pdetool('refine')
+    pdetool('refine')
+    pdetool('refine')
+    pdetool('refine')
 
     % PDE coefficients
     pdeseteq(1, '1.0', '0.0', '0', '1.0', '0:10', '0.0', '0.0', '[0 100]')
