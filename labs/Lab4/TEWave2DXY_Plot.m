@@ -1,10 +1,10 @@
-function [E_x, E_y, E_z, H_x, H_y, H_z]=TEWave2DXY_Plot(epsilon_r,mu_r,E_0,m,p,a,b,z,f,t)
-%% Function: Demonstrate the field components of a TE21 mode wave with E_0=1
+function [E_x, E_y, E_z, H_x, H_y, H_z]=Example4_2_TEWave2DXY_Plot(epsilon_r,mu_r,H0,m,p,a,b,z,f,t)
+%% Function: Demonstrate the field components of a TE21 mode wave with H0=1
 %  Input:    Parameters are same as for TEWave2DXY
 epsilon_r=8;
 mu_r=1;
-E_0=1;
-m=1;
+H0=1;
+m=2;
 p=1;
 a=0.15;
 b=0.05;
@@ -16,7 +16,7 @@ t=0.1/f;
 Na = 20;
 Nb = 20;
 [x,y] = meshgrid([0:a/(Na-1):a], [0:b/(Nb-1):b]);
-[E_x, E_y, E_z, H_x, H_y, H_z]=TEWave2DXY(epsilon_r,mu_r,E_0,m,p,a,b,z,f, t, Na, Nb);
+[E_x, E_y, E_z, H_x, H_y, H_z]=TEWave2DXY(epsilon_r,mu_r,H0,m,p,a,b,z,f, t, Na, Nb);
 figure
 subplot(3,2,1); quiver(x,y,E_x, E_y );                          % Use quiver to plot the Ex, Ey components in the 2D plane
 axis([0 a 0 b]); xlabel('x'); ylabel('y'); title('(E_x, E_y)')
