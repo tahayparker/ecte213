@@ -48,6 +48,9 @@ if length(theta_at_minus3db) > 1
 else
     fprintf('Not enough points to calculate difference\n');
 end
+hold on;
+plot(theta_at_minus3db, F_db(indices), 'ro', 'MarkerFaceColor', 'r');
+hold off;
 
 % Pattern vs \phi in polar coordinates
 subplot(2,2,3)
