@@ -40,6 +40,9 @@ disp('Theta values at -3 dB:');
 for i = 1:length(indices)
     fprintf('Theta = %.4f degrees\n', theta_at_minus3db(i));
 end
+hold on;
+plot(theta_at_minus3db, F_db(indices), 'ro', 'MarkerFaceColor', 'r');
+hold off;
 
 % Calculate and display the difference between max and min theta values at -3 dB
 if length(theta_at_minus3db) > 1
